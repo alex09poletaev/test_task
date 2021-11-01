@@ -11,12 +11,6 @@ if($isLogged->isLogged()){
     header('Location: index.php');
 }
 
-$isLogged = new CheckIsLogged;
-$logged = new Checked($isLogged);
-if($logged->checked()){
-    header('Location: index.php');
-}
-
 if(isset($data['submit'])){
     $CheckIs = "CheckIs";
     $keys = array_keys($data);
