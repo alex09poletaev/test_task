@@ -17,15 +17,10 @@ if(isset($data['submit'])){
     $arr['db_connection'] = $db_connection;
     for($i = 0; $i < count($keys)-1; $i++){
         $arr["$keys[$i]"] = $data[$keys[$i]];
-        $check = $CheckIs.$keys[$i];
-        $isCheked = new Checked(new $check);
-        $isCheked->checked($arr);
     }
-    $password = $data['password'];
-    $login = $data['login'];
     $isExist = new Checked(new CheckIsExist);
     $isExist->checked($arr);
-    if($_SESSION['signup_errors'] == ""){
+    if(!isset($_SESSION['signup_errors']) || $_SESSION['signup_errors'] == ""){
         $info = new LogIn;
         if($info->log_in($arr)){
             header('Location: index.php');

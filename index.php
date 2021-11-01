@@ -2,6 +2,8 @@
 require_once 'checks.php';
 require_once 'db.php';
 
+$_SESSION['signup_errors'] = "";
+
 $isLogged = new CheckIsLogged;
 if($isLogged->isLogged()):
     $id = $_SESSION['user']['user_id'];

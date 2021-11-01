@@ -34,15 +34,15 @@ if(isset($data['signup'])){
         $isUniqe->checked($uniqe_email);
     }
     
-    if($_SESSION['signup_errors'] != ""){
-        echo '<div style="color:red;">'.$_SESSION['signup_errors'].'</div>';
-        $_SESSION['signup_errors'] = "";
-    }
-    else{
+    if(!isset($_SESSION['signup_errors']) || $_SESSION['signup_errors'] == ""){
         $arr['registry_date'] = time();
         $registry = new Registration;
         $registry->registr($arr);
         header('Location: index.php');
+    }
+    else{
+        echo '<div style="color:red;">'.$_SESSION['signup_errors'].'</div>';
+        $_SESSION['signup_errors'] = "";
     }
 }
 ?>

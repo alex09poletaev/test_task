@@ -97,19 +97,3 @@ class CheckIsExist implements IChecker{
         }
     }
 }
-
-
-
-//function formIsEmpty($form){
-//    if(trim($form) == ""){
-//        $_SESSION['signup_errors'] .= 'Fill all fields. <br>';
-//        return true;
-//    }
-//}
-
-
-//function checkAgreement($agree){
-//    if(!isset($agree)){
-//        $_SESSION['signup_errors'] .= 'Check agreement <br>';
-//    }
-//}
